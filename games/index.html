@@ -1,13 +1,866 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>This is the Index Page of the Games Page!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Some Spare Games for you to pass time with!">
+  <meta property="og:title" content="Akash Manna" />
+  <meta property="og:url" content="https://akash-manna.github.io/games/" />
+  <meta property="og:description" content="Some Spare Games for you to pass time with!">
+  <meta property="og:image" content="https://akash-manna.github.io/games/img/games-logo.png">
+  <meta name="author" content="Akash Manna">
+  <title>Games|Akash Manna</title>
+  <link rel="icon" href="img/games-logo.png">
+  <link href='https://fonts.googleapis.com/css?family=Cardo:400,700,400italic|Open+Sans:400,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <style>
+    /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+    /* ------------------------------------------------------------
+  Base Typography
+------------------------------------------------------------ */
+    html {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: "Cardo", serif;
+    }
+    .block{
+      /*display: block;*/
+    }
+
+    h1 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: .5em 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      font-family: "Cardo", serif;
+      font-size: .75em;
+      font-style: italic;
+      font-weight: 400;
+      margin: 0 .3em 0 .1em;
+      text-transform: none;
+    }
+
+    .game {
+      text-transform: uppercase;
+    }
+
+    .game .game__name {
+      font-size: 1.25rem;
+      text-align: right;
+      margin: 0;
+    }
+
+    .game .game__motto {
+      margin: .5em 0 0;
+    }
+
+    .game__name {
+      font-weight: 400;
+    }
+
+    .game__motto span {
+      display: inline-block;
+      line-height: .8;
+    }
+
+    .game__motto .line {
+      display: block;
+    }
+
+    @media screen and (min-width: 380px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .game .game__name {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      html {
+        font-size: 90%;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      html {
+        font-size: 100%;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      html {
+        font-size: 115%;
+      }
+    }
+
+    /* ------------------------------------------------------------
+  Layout
+------------------------------------------------------------ */
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eee /*url("https://f.cl.ly/items/1v09242D3e323Z2Z2Q2X/pw_maze_white.png")*/;
+      margin: 0;
+      padding: 2em 0 0;
+    }
+
+    .great-games {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      min-width: 320px;
+      max-width: 1100px;
+    }
+
+    .game {
+      /* background-image: url("https://f.cl.ly/items/3z2p0F0h3s3b392G311b/games-texture.png"); */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-top: .5rem;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      vertical-align: center;
+      min-height: 9rem;
+      z-index: 2;
+    }
+
+    .game:after {
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+      content: '';
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .game__name {
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transition: all .4s ease-in;
+      z-index: 1;
+    }
+
+    .game__name span {
+      position: absolute;
+      right: 1em;
+      z-index: 2;
+    }
+
+    .game__motto {
+      flex: 1;
+      padding: 1rem 0;
+    }
+
+    .game:hover .game__name {
+      left: -100%;
+    }
+
+    @media screen and (min-width: 380px) {
+      .game__name span {
+        right: 15%;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .game__name {
+        width: 85%;
+      }
+
+      .game__name:before,
+      .game__name:after {
+        box-shadow: 4px 0 2px -2px rgba(0, 0, 0, 0.4);
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .game__name:before {
+        top: -50%;
+        transform-origin: right bottom;
+        transform: rotate(30deg);
+      }
+
+      .game__name:after {
+        top: 50%;
+        transform-origin: right top;
+        transform: rotate(-30deg);
+      }
+
+      .game__name span {
+        margin: -.5em auto 0;
+        top: 50%;
+        left: 40%;
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      .great-games {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+      }
+
+      .game {
+        margin: .5rem 1%;
+        width: 48%;
+      }
+
+      .game__name {
+        width: 100%;
+      }
+
+      .game__name span {
+        bottom: 5%;
+        right: 5%;
+      }
+    }
+
+    @media screen and (min-width: 900px) {
+      .game {
+        width: 31.33333333%;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .game__motto {
+        padding: 1.5rem 0;
+      }
+    }
+
+    /* ------------------------------------------------------------
+  Footer
+------------------------------------------------------------ */
+    footer {
+      border: 1px dotted #ccc;
+      background: rgba(0, 0, 0, 0.8);
+      border-width: 1px 0;
+      color: #aaa;
+      display: block;
+      margin-top: 5rem;
+      padding: 2rem 5%;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: "Open Sans", sans-serif;
+      font-size: .75rem;
+      margin: 0;
+    }
+
+    footer a {
+      color: #ccc;
+      display: inline-block;
+      font-weight: bold;
+      padding: .2em;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media screen and (min-width: 500px) {
+      footer {
+        text-align: left;
+      }
+
+      footer p:before {
+        content: "\2022\0020 ";
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      footer p {
+        font-size: .666666rem;
+      }
+    }
+
+    /* ------------------------------------------------------------
+  games Styles
+------------------------------------------------------------ */
+    .is--lannister {
+      background-color: #f1b62c;
+      background-position: 0 0;
+      color: #901510;
+    }
+
+    .is--lannister .game__name {
+      background-color: #901510;
+      /* background-image: url(https://f.cl.ly/items/0e3p1s3B1N0B1K1z143a/lannister-logo.png); */
+    }
+
+    .is--lannister .game__name:before,
+    .is--lannister .game__name:after {
+      background: #901510;
+    }
+
+    .is--arryn {
+      background-color: #d1cebb;
+      background-position: 0 12.5%;
+      color: #151c53;
+    }
+
+    .is--arryn .game__name {
+      background-color: #151c53;
+      /* background-image: url(https://f.cl.ly/items/171V180i3v1d3h1d0s2Z/arryn-logo.png); */
+    }
+
+    .is--arryn .game__name:before,
+    .is--arryn .game__name:after {
+      background: #151c53;
+    }
+
+    .is--tictactoe {
+      background-color: #000;
+      background-position: 0 25%;
+      color: #fdce20;
+    }
+
+    .is--tictactoe .game__name {
+      background-color: #fdce20;
+      /* background-image: url(https://f.cl.ly/items/1q0z29153j0i2G1q3e11/tictactoe-logo.png); */
+    }
+
+    .is--tictactoe .game__name:before,
+    .is--tictactoe .game__name:after {
+      background: #fdce20;
+    }
+
+    .is--stark {
+      background-color: #989898;
+      background-position: 0 37.5%;
+      color: #ece6db;
+    }
+
+    .is--stark .game__name {
+      background-color: #ece6db;
+      /* background-image: url(https://f.cl.ly/items/3H0Q422j0t121q1N2310/stark-logo.png); */
+    }
+
+    .is--stark .game__name:before,
+    .is--stark .game__name:after {
+      background: #ece6db;
+    }
+
+    .is--word {
+      background-color: #af1d1e;
+      background-position: 0 50%;
+      color: #00173d;
+    }
+
+    .is--word .game__name {
+      background-color: #00173d;
+      /* background-image: url(https://f.cl.ly/items/1e0v0m281T0k1n1p0C0n/word-logo.png); */
+    }
+
+    .is--word .game__name:before,
+    .is--word .game__name:after {
+      background: #00173d;
+    }
+
+    .is--tyrell {
+      background-color: #f1b62e;
+      background-position: 0 62.5%;
+      color: #006600;
+    }
+
+    .is--tyrell .game__name {
+      background-color: #006600;
+      /* background-image: url(https://f.cl.ly/items/1p3r0S2t3W3k2l1P1z1Z/tyrell-logo.png); */
+    }
+
+    .is--tyrell .game__name:before,
+    .is--tyrell .game__name:after {
+      background: #006600;
+    }
+
+    .is--greyjoy {
+      background-color: #fecc37;
+      background-position: 0 75%;
+      color: #000;
+    }
+
+    .is--greyjoy .game__name {
+      background-color: #000;
+      /* background-image: url(https://f.cl.ly/items/1d0f3A3v1W0R44201x2F/greyjoy-logo.png); */
+    }
+
+    .is--greyjoy .game__name:before,
+    .is--greyjoy .game__name:after {
+      background: #000;
+    }
+
+    .is--martell {
+      background-color: #e12812;
+      background-position: 0 87.5%;
+      color: #faa703;
+    }
+
+    .is--martell .game__name {
+      background-color: #faa703;
+      /* background-image: url(https://f.cl.ly/items/002g3N170h3b0S3P1Z2x/martell-logo.png); */
+    }
+
+    .is--martell .game__name:before,
+    .is--martell .game__name:after {
+      background: #faa703;
+    }
+
+    .is--number {
+      background-color: #d13a1b;
+      background-position: 0 100%;
+      color: #000;
+    }
+
+    .is--number .game__name {
+      background-color: #000;
+       /*background-image: url(img/1-Number-PNG-Pic.png); */
+    }
+
+    .is--number .game__name:before,
+    .is--number .game__name:after {
+      background: #000;
+    }
+
+    /* Tic-tac-toe
+---------------------------------------- */
+    .is--tictactoe .game__name {
+      background-position: -55px -55px, 0 0;
+      color: #000;
+      /*background-image: url(img/1-Number-PNG-Pic.png);*/
+    }
+
+    .is--tictactoe .game__motto .line {
+      margin-bottom: .5em;
+    }
+
+    .is--tictactoe .game__motto .line span:nth-of-type(1) {
+      font-size: 3.25rem;
+      font-weight: bold;
+    }
+
+    .is--tictactoe .game__motto .line span:nth-of-type(2) {
+      vertical-align: baseline;
+    }
+
+    .is--tictactoe .game__motto span:nth-of-type(2) {
+      font-size: 1.5rem;
+      margin: 0 .1em;
+      position: relative;
+      top: .1em;
+      vertical-align: top;
+    }
+
+    .is--tictactoe .game__motto span:nth-of-type(3) {
+      font-size: 2.75rem;
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 500px) {
+      .is--tictactoe .game__name {
+        background-position: -50px -35px, 0 0;
+        background-size: 100% auto;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      .is--tictactoe .game__name {
+        background-position: -55px -55px, 0 0;
+        background-size: auto;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--tictactoe .game__name {
+        background-position: -25px -55px, 0 0;
+        background-size: auto;
+      }
+    }
+
+    /* Word Guess
+---------------------------------------- */
+    .is--word .game__name {
+      background-position: 5px 5px, 0 0;
+      color: #fff;
+    }
+
+    .is--word .game__motto span {
+      font-weight: bold;
+      margin-bottom: .25rem;
+    }
+
+    .is--word .game__motto span:nth-of-type(1) {
+      font-size: 2.3rem;
+    }
+
+    .is--word .game__motto span:nth-of-type(2) {
+      font-size: 3rem;
+    }
+
+    .is--word .game__motto span:nth-of-type(3) {
+      font-size: 2.3rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--word .game__name {
+        background-position: 20px 10px, 0 0;
+      }
+    }
+
+    /* Number
+---------------------------------------- */
+    .is--number .game__name {
+      background-position: -35px 40px, 0 0;
+      color: #fff;
+    }
+
+    .is--number .game__motto span:nth-of-type(1),
+    .is--number .game__motto span:nth-of-type(3) {
+      font-weight: bold;
+    }
+
+    .is--number .game__motto span:nth-of-type(1) {
+      font-size: 3.25rem;
+      letter-spacing: .1em;
+    }
+
+    .is--number .game__motto span:nth-of-type(2) {
+      font-size: 1.25rem;
+      margin: .15em 0 .2em;
+    }
+
+    .is--number .game__motto span:nth-of-type(3) {
+      font-size: 2.25rem;
+    }
+
+    @media screen and (min-width: 500px) {
+      .is--number .game__name {
+        background-position: -60px 5px, 0 0;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--number .game__name {
+        background-position: -30px 20px, 0 0;
+      }
+    }
+
+    /*FOR LATER USE!!!!*/
+        /* Stark
+---------------------------------------- */
+    /*.is--stark .game__name {
+      background-position: -55px 10px, 0 0;
+      color: #000;
+    }
+
+    .is--stark .game__motto span:nth-of-type(1),
+    .is--stark .game__motto span:nth-of-type(3) {
+      font-weight: bold;
+    }
+
+    .is--stark .game__motto span:nth-of-type(1) {
+      font-size: 3rem;
+      margin-bottom: .15em;
+    }
+
+    .is--stark .game__motto span:nth-of-type(2) {
+      font-size: 1.5rem;
+      vertical-align: top;
+      margin: 0 .15em;
+      position: relative;
+      top: .1em;
+    }
+
+    .is--stark .game__motto span:nth-of-type(3) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--stark .game__name {
+        background-position: 5px 10px, 0 0;
+      }
+    }*/
+        /* Lannister
+---------------------------------------- */
+    /*.is--lannister .game__name {
+      background-position: -35px 0, 0 0;
+      color: #fff;
+    }
+
+    .is--lannister .game__motto span:nth-of-type(1),
+    .is--lannister .game__motto span:nth-of-type(3) {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .is--lannister .game__motto span:nth-of-type(1) {
+      margin-bottom: .1em;
+      text-indent: -3.5rem;
+    }
+
+    .is--lannister .game__motto span:nth-of-type(2) {
+      font-size: 1.5rem;
+      position: relative;
+      top: .2em;
+      vertical-align: top;
+      text-indent: 2rem;
+    }
+
+    @media screen and (min-width: 500px) {
+      .is--lannister .game__name {
+        background-position: -70px 0, 0 0;
+      }
+    }
+
+    @media screen and (min-width: 650px) {
+      .is--lannister .game__name {
+        background-position: -35px 0, 0 0;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--lannister .game__name {
+        background-position: -10px 0, 0 0;
+      }
+    }
+*/
+    /* Arryn
+---------------------------------------- */
+/*    .is--arryn .game__name {
+      background-position: -85px 15px, 0 0;
+      color: #fff;
+    }
+
+    .is--arryn .game__motto {
+      margin-top: 0;
+    }
+
+    .is--arryn .game__motto span:nth-of-type(2),
+    .is--arryn .game__motto span:nth-of-type(4) {
+      font-weight: bold;
+    }
+
+    .is--arryn .game__motto span:nth-of-type(2) {
+      font-size: 3rem;
+    }
+
+    .is--arryn .game__motto span:nth-of-type(4) {
+      font-size: 2.25rem;
+    }
+
+    .is--arryn .game__motto span:nth-of-type(1),
+    .is--arryn .game__motto span:nth-of-type(3) {
+      margin: .25em 0 .3em;
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--arryn .game__name {
+        background-position: 10px 15px, 0 0;
+      }
+    }*/
+        /* Tyrell
+---------------------------------------- */
+    /*.is--tyrell .game__name {
+      background-position: -50px -35px, 0 0;
+      color: #fff;
+    }
+
+    .is--tyrell .game__motto span:nth-of-type(1) {
+      font-size: 2.65rem;
+      margin-bottom: .15em;
+    }
+
+    .is--tyrell .game__motto span:nth-of-type(2) {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 500px) {
+      .is--tyrell .game__name {
+        background-position: -70px -45px, 0 0;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--tyrell .game__name {
+        background-position: 5px center, 0 0;
+      }
+    }*/
+
+    /* Greyjoy
+---------------------------------------- */
+    /*.is--greyjoy .game__name {
+      background-position: -30px -70px, 0 0;
+      color: #fff;
+    }
+
+    .is--greyjoy .game__motto span:nth-of-type(1) {
+      font-size: 2rem;
+    }
+
+    .is--greyjoy .game__motto span:nth-of-type(2) {
+      font-size: 2.75rem;
+      font-weight: bold;
+      letter-spacing: -.05em;
+      margin: .1em;
+    }
+
+    .is--greyjoy .game__motto span:nth-of-type(3) {
+      font-size: 2rem;
+    }
+
+    @media screen and (min-width: 500px) {
+      .is--greyjoy .game__name {
+        background-position: -30px -45px, 0 0;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--greyjoy .game__name {
+        background-position: 10px 10px, 0 0;
+      }
+    }*/
+    /* Martell
+---------------------------------------- */
+    /*.is--martell .game__name {
+      background-position: -60px center, 0 0;
+      color: #000;
+    }
+
+    .is--martell .game__motto span:nth-of-type(1),
+    .is--martell .game__motto span:nth-of-type(3) {
+      font-weight: bold;
+    }
+
+    .is--martell .game__motto span:nth-of-type(1) {
+      font-size: 2rem;
+    }
+
+    .is--martell .game__motto span:nth-of-type(2) {
+      font-size: 2.6rem;
+      margin: .12em 0 .15em;
+    }
+
+    .is--martell .game__motto span:nth-of-type(3) {
+      font-size: 1.9rem;
+    }
+
+    @media screen and (min-width: 500px) {
+      .is--martell .game__name {
+        background-position: -75px center, 0 0;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .is--martell .game__name {
+        background-position: 5px center, 0 0;
+      }
+    }*/
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 </head>
+
 <body>
-	<h1>This is where you choose your game!</h1>
-	<table border="0">
-		<tr><td><a href="https://Akash-manna.github.io/games/Guess-The-Number/">The Number Game</a></td></tr>
-		<tr><td><a href="https://Akash-manna.github.io/games/TicTacToe/">The TicTacToe Game</a></td></tr>
-		<tr><td><a href="https://Akash-manna.github.io/games/word-guess/">The Word Guessing Game!</td></tr>
+
+  <h1>games <span>to</span> Spare</h1>
+
+  <div class="great-games">
+    <!-- <a class="block" href="https://akash-manna.github.io/games/" target="_BLANK"> -->
+    <article class="game is--number" onclick="location.href='https://akash-manna.github.io/games/Guess-The-Number/'" type="button">
+      <h2 class="game__name"><span>Number</span></h2>
+      <p class="game__motto"><span>Guess</span> <span class="line">the</span> <span class="line">Number</span></p>
+    </article>
+  <!-- </a> -->
+
+    <article class="game is--tictactoe"onclick="location.href='https://akash-manna.github.io/games/TicTacToe/'" type="button">
+      <h2 class="game__name"><span>Tic-tac-toe</span></h2>
+      <p class="game__motto"><span class="line"><span>Make</span> <span>it</span></span> <span>three,</span> <span>dude</span></p>
+    </article>
+
+    <article class="game is--word"onclick="location.href='https://akash-manna.github.io/games/word-guess/'" type="button">
+      <h2 class="game__name"><span>Word Guess</span></h2>
+      <p class="game__motto"><span class="line">Guess</span> <span class="line">The</span> <span>Word</span></p>
+    </article>
+
+    <!-- <article class="game is--lannister">
+      <h2 class="game__name"><span>Lannister</span></h2>
+      <p class="game__motto"><span class="line">Hear</span> <span>me</span> <span>roar</span></p>
+    </article>
+
+    <article class="game is--tyrell">
+      <h2 class="game__name"><span>Tyrell</span></h2>
+      <p class="game__motto"><span class="line">Growing</span> <span>strong</span></p>
+    </article>
+
+    <article class="game is--stark">
+      <h2 class="game__name"><span>Stark</span></h2>
+      <p class="game__motto"><span class="line">Winter</span> <span>is</span> <span>coming</span></p>
+    </article>
+
+    <article class="game is--arryn">
+      <h2 class="game__name"><span>Arryn</span></h2>
+      <p class="game__motto"><span class="line">As</span> <span class="line">high</span> <span class="line">as</span> <span class="line">honor</span></p>
+    </article>
+
+    <article class="game is--martell">
+      <h2 class="game__name"><span>Martell</span></h2>
+      <p class="game__motto"><span class="line">Unbowed</span> <span class="line">Unbent</span> <span class="line">Unbroken</span></p>
+    </article>
+
+    <article class="game is--greyjoy">
+      <h2 class="game__name"><span>Greyjoy</span></h2>
+      <p class="game__motto"><span>We</span> <span class="line">do not</span> <span>sow</span></p>
+    </article>
+ -->
+  </div>
+
+
+  <!-- <footer>
+    <p>Tyrell & Martell sigils by <a href="http://mortaris.deviantart.com/">~Mortaris</a></p>
+    <p>Body pattern: <a href="https://subtlepatterns.com/maze-white/"><i>Maze white</i></a> by <a href="http://www.peax-webdesign.com/">Peax</a></p>
+    <p>Rest of graphic stuff by <a href="http://www.hbo.com/game-of-thrones/">HBO</a></p>
+    <p><cite>Game of Thrones</cite> by <a href="https://www.youtube.com/watch?v=j7lp3RhzfgI">George R. R. Martin</a></span></p>
+  </footer> -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
 </body>
+
 </html>

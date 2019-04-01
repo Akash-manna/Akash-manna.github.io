@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box
+}
+
+html {
+  background: white;
+}
+
+body {
+  margin: 2.2rem
+}
+
+.resume {
+  min-width: 310px;
+  font: 16px Helvetica, Avernir, sans-serif;
+  line-height: 24px;
+  color: #000
+}
+
+.resume h1 {
+  margin: 0 0 16px 0;
+  padding: 0 0 16px 0;
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  border-bottom: 1px solid #999;
+  line-height: 50px
+}
+
+.resume h2 {
+  font-size: 20px;
+  margin: 0 0 6px 0;
+  position: relative
+}
+
+.resume h2 span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-style: italic;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #999;
+  font-weight: normal
+}
+
+.resume p {
+  margin: 0 0 16px 0
+}
+
+.resume a {
+  color: #45b0ba;
+  text-decoration: none;
+  border-bottom: 1px dotted #aaba45;
+}
+
+.resume a:hover {
+  border-bottom-style: solid;
+  color: #e24848;
+}
+
+.resume dt {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  padding: 0 26px 0 0;
+  width: 150px;
+  border-right: 1px solid #999
+}
+
+.resume dl {
+  display: table-row
+}
+
+.resume dl dt,
+.resume dl dd {
+  display: table-cell;
+  padding-bottom: 20px
+}
+
+.resume dl dd {
+  width: 500px;
+  padding-left: 26px
+}
+
+.resume img {
+  float: right;
+  padding: 10px;
+  background: #fff;
+  margin: 0 30px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+  width: 30%;
+  max-width: 220px
+}
+
+/* Making the webpage responsive so that it can be viewed across any devices flawlessly */
+@media screen and (max-width:1100px) {
+  .resume h2 span {
+    position: static;
+    display: block;
+    margin-top: 2px
+  }
+}
+
+@media screen and (max-width:550px) {
+  body {
+    margin: 1rem
+  }
+  /*.resume img {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+  }*/
+}
+
+@media screen and (max-width:400px) {
+  .resume dl dt {
+    border-right: none;
+    border-bottom: 1px solid #999
+  }
+  .resume dl,
+  .resume dl dd,
+  .resume dl dt {
+    display: block;
+    padding-left: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+    text-align: left;
+    width: 100%
+  }
+  .resume dl dd {
+    margin-top: 6px
+  }
+  .resume h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px
+  }
+  .resume dt {
+    font-size: 20px
+  }
+  h1 {
+    font-size: 36px;
+    margin-right: 0;
+    line-height: 0
+  }
+  .resume img {
+    margin: 0
+  }
+}
+
+@media screen and (max-width:320px) {
+  body {
+    margin: 0
+  }
+  img {
+    margin: 0;
+    margin-bottom: -40px
+  }
+  .resume {
+    width: 320px;
+    padding: 12px;
+    overflow: hidden
+  }
+  p,
+  li {
+    margin-right: 20px
+  }
+}

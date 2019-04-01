@@ -1,0 +1,26 @@
+/*html, body {
+  height: 100%;
+
+}*/
+
+.codedoodl {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  /*background: #F80606;*/
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: 5vw;
+}
+
+.letter {
+  display: inline-block;
+  width: 5vw;
+  font-size: 5vw;
+  height: 5vh;
+}

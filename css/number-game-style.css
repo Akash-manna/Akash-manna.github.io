@@ -1,0 +1,241 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+
+html{
+  height: 100%;
+}
+body {
+	min-height: 100%;
+	/*background-image:url("https://i.imgur.com/d1iuerK.jpg");*/
+	background-image: url(https://i.imgur.com/iWUM6.jpg);
+	background-size:cover;
+	background-color:rgba(0,0,0,.9);
+	background-position:center center;
+}
+.container{
+	margin: auto;
+}
+h1 {
+	color:#FFF;
+	font-weight:800;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-transform:uppercase;
+	dispay:block;
+	width:100%;
+	text-align:center;
+	padding:.8em 0;
+	margin:5em 0 0;
+	border:solid 1px rgba(255,255,255,.2);
+	position:relative;
+	text-shadow:0px 1px 2px #000;
+}
+
+h1:before, h1:after, h1 span:before, h1 span:after {
+	content:"";
+	display:block;
+	width:16px;
+	height:16px;
+	position:absolute;
+}
+h1:before {
+	border-right:solid 1px #FFF;
+	border-bottom:solid 1px #FFF;
+	left:-16px;
+	top:-16px;
+}
+h1:after {
+	border-left:solid 1px #FFF;
+	border-bottom:solid 1px #FFF;
+	right:-16px;
+	top:-16px;
+}
+h1 span:before {
+	border-right:solid 1px #FFF;
+	border-top:solid 1px #FFF;
+	left:-16px;
+	bottom:-16px;
+}
+h1 span:after {
+	border-left:solid 1px #FFF;
+	border-top:solid 1px #FFF;
+	right:-16px;
+	bottom:-16px;
+}
+input[type='text']{
+    
+    color: #333;
+    width: 280px;
+    height: 38px;
+    margin-left: -150px;
+    margin-top: -19px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    transition: box-shadow 320ms;
+
+    box-shadow: 0px 0px 8px 10px rgba(0,0,0,0.1);
+    
+    border-radius: 3px;
+    font-size: 18px;
+    border: 0px;
+}
+
+input[type='text']:focus {
+
+    outline: 0px;
+    outline-offset: 0px;
+    box-shadow: 0px 0px 1px 5px rgba(0,0,0,0.12);
+}
+
+input:-moz-placeholder {
+    color: #cccccc;
+}
+#submitguess{
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	float:left;
+	width: 100%;
+	border: #fbfbfb solid 4px;
+	cursor:pointer;
+	background-color: #3498db;
+	color:white;
+	font-size:24px;
+	padding-top:22px;
+	padding-bottom:22px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+#submitguess:hover{
+	background-color: rgba(0,0,0,0);
+	color: #0493bd;
+}
+	
+.submit:hover {
+	color: #3498db;
+}
+.ease {
+	width: 0px;
+	height: 74px;
+	background-color: #fbfbfb;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-o-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+}
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+
+@media only screen and (max-width: 580px) {
+	#form-div{
+		left: 3%;
+		margin-right: 3%;
+		width: 88%;
+		margin-left: 0;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+
+/*******************
+******The Modal*****
+********************/
+.modal{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: none;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+/*Display the Modal when targeted*/
+.modal:target{
+	display: table;
+	position: fixed;
+}
+/*The Modal Box*/
+.modal-dialog{
+	display: table-cell;
+	vertical-align: middle;
+}
+/*The Modal Content*/
+.modal-dialog .modal-content{
+	margin: auto;
+	background-color: #f3f3f3;
+	position: relative;
+	padding: 0;
+	outline: 0;
+	border: 1px #777 solid;
+	text-align: justify;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	/*Add animation*/
+	-webkit-animation-name: modalanimation;
+	/*Chrome, Safari, Opera*/
+	animation-name: modalanimation;
+	animation-duration: 0.5s;
+}
+/*The Button to Close the modal*/
+.closebtn{
+	text-decoration: none;
+	float: right;
+	font-size: 35px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.closebtn:hover,
+.closebtn:focus{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.container-modal{
+	padding: 2px 16px;
+}
+
+header{
+	background-color: #5cb85c;
+	font-size: 25px;
+	color: white;
+}
+
+footer{
+	background-color: #5cb85c;
+	font-size: 20px;
+	color: white;
+}
+
+@-webkit-keyframes modalanimation{
+	from{
+		top: -100px;
+		opacity: 0;
+	}
+	to{
+		top: 0px;
+		opacity: 1;
+	}
+}
+/*Add Animation (Standard Syntax)*/
+@keyframes modalanimation{
+	from{
+		top: -100px;
+		opacity: 0;
+	}
+	to{
+		top: 0px;
+		opacity: 
+	}
+}

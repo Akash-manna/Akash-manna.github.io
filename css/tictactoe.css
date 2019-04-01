@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #fff;
+  font-family: "Comfortaa", sans-serif;
+}
+h1 {
+  font-family: "PT Sans", sans-serif;
+}
+.message {
+  color: #DD4929;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}
+form label {
+  font-size: 4em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+form input[type=button] {
+  margin: 1em;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size:1em;
+  margin: 0.575em 0.575em 0.575em 0.575em;
+  position: relative;
+  background-color: #009688;
+  border: none;
+  padding: 0.575em;
+  width: 5.25em;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+form input[type=button]:hover{
+  background:#fff;
+  box-shadow:0em 0.125em 0.625em 0.313em #97B1BF;
+  color:#000;
+}
+
+form input[type=button]:after {
+  content: "";
+  background: #f1c40f;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -1.25em !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+form input [type=button]:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+form fieldset {
+  display: block;
+  opacity: 1;
+  transition: all ease 1s;
+}
+form.game-on fieldset {
+  opacity: 0;
+  display: none;
+}
+form.game-on button {
+  opacity: 1;
+  display: block;
+  margin: 0 auto;
+}
+#grid-section {
+  margin: 3em 0;
+}
+#grid {
+  width: 300px;
+  margin: 0 auto;
+}
+li {
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+  display: block;
+  float: left;
+  font-size: 3em;
+  text-align: center;
+  padding: 0.5em;
+}
+#c1,
+#c2,
+#c3 {
+  border-top: none;
+}
+#c3,
+#c6,
+#c9 {
+  border-right: none;
+}
+#c7,
+#c8,
+#c9 {
+  border-bottom: none;
+}
+#c1,
+#c4,
+#c7 {
+  border-left: none;
+}
+.winner {
+  color: #9AE1E5;
+}
+.btn-primary,
+.btn-primary:focus {
+  background-color: #33B7A5;
+  opacity: 0;
+  outline: 0;
+  transition: all ease 0.3s;
+}
+.btn-primary:hover {
+  background-color: #4C2F39;
+}
+footer{
+  text-align: center;
+}
